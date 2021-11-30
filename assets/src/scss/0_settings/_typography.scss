@@ -1,0 +1,92 @@
+/** =============================================
+*
+*   Typography styles
+*
+============================================= */
+
+// Global theme font.
+$font__main: "Montserrat", sans-serif;
+
+// Global code font
+$font__code: "Montserrat", sans-serif, monospace;
+
+// Fallback font when font is not loaded via WebFonts JS.
+$font__fallback: sans-serif;
+
+* {
+    font-family: $font__main;
+    font-weight: 500;
+}
+
+body {
+    color: #333;
+}
+
+$body-text: (
+    'body': (
+        'small': (
+            font-size: 16px,
+            line-height: 1.2
+        )
+    ),
+    'h1': (
+        'small': (
+            font-size: 36px,
+            line-height: 1.2
+        )
+    ),
+    'h2': (
+        'small': (
+            font-size: 36px,
+            line-height: 1.2
+        )
+    ),
+    'h3': (
+        'small': (
+            font-size: 24px,
+            line-height: 1.2
+        )
+    ),
+    'h4': (
+        'small': (
+            font-size: 24px,
+            line-height: 1.2
+        )
+    ),
+    'h5': (
+        'small': (
+            font-size: 20px,
+            line-height: 1.2
+        )
+    ),
+    'h6': (
+        'small': (
+            font-size: 16px,
+            line-height: 1.5
+        )
+    ),
+    'p': (
+        'small': (
+            font-size: 16px,
+            line-height: 1.5
+        )
+    ),
+    'text extra small': (
+        'small': (
+            font-size: 12px,
+            line-height: 1.5
+        )
+    ),
+    'text small': (
+        'small': (
+            font-size: 14px,
+            line-height: 1.5
+        )
+    ),
+    'text large': (
+        'small': (
+            font-size: 20px,
+            line-height: 1.5
+        )
+    )
+)

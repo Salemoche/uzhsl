@@ -1,0 +1,305 @@
+/** =============================================
+*
+*   Atoms styles
+*
+============================================= */
+
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    transition: opacity .3s;
+}
+
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+	margin: 0;
+	@include body-text( body );
+}
+
+main {
+    padding-top: 130px;
+
+    @include mq($until: 'medium') {
+        padding-top: 48px;
+    }
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	cursor: pointer;
+    color: color( 'black', '1' );
+
+	&:focus {
+		// outline: 5px auto -webkit-focus-ring-color;
+		// outline-offset: -2px;
+	}
+
+	&:hover,
+	a:active {
+	}
+}
+
+
+/**========================
+*	Headings
+*========================*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-rendering: optimizelegibility;
+	font-family: "Sansation";
+	color: color( 'main', '1' );
+    margin: 0;
+    width: 100%;
+}
+
+h1 {
+	@include body-text( h1 );
+    margin-bottom: map_get( $spacing, "large" );
+}
+
+h2 {
+	@include body-text( h2 );
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+h3 {
+	@include body-text( h3 );
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+h4 {
+	@include body-text( h4 );
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+h5 {
+	@include body-text( h5 );
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+h6 {
+	@include body-text( h6 );
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+
+/**========================
+*	Copy
+*========================*/
+
+p {
+	@include body-text( p );
+    margin-top: 0;
+    margin-bottom: map_get( $spacing, "regular" );
+}
+
+/**========================
+*	List
+*========================*/
+
+ul,
+ol {
+
+}
+
+ul {
+}
+
+li > ul,
+li > ol {
+}
+
+/**========================
+*	Input
+*========================*/
+
+input,
+button,
+select,
+textarea {
+	// font-family: $font__main;
+}
+
+select,
+textarea,
+button,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	display: inline-block;
+	border: none;
+	background: none;
+}
+
+textarea {
+	height: auto;
+	max-width: 100%;
+	outline: none;
+	overflow: auto;
+}
+
+select {
+}
+
+select,
+input[type="file"] {
+}
+
+button {
+}
+
+label {
+}
+
+label,
+input,
+button,
+select,
+textarea {
+	@include body-text( body );
+}
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+/**
+*========================================
+*	
+*	Hasel Atoms
+*	
+*========================================
+*/
+
+.hsl-button,
+button {
+	padding: 8px 16px;
+	margin-bottom: 4px;
+	background: color( 'main', '2' );
+	color: color( 'main', '4' );
+	border-radius: $border-radius-small;
+	box-shadow: $box-shadow-small;
+	text-decoration: none;
+	font-weight: 400;
+	display: inline-block;
+	transition: $transition;
+
+	span {
+		color: white;
+	}
+
+	&:hover {
+		transform: translate(1px, 1px);
+		box-shadow: $box-shadow-small-hover;
+	}
+
+	&:focus {
+		transform: translate(2px, 2px);
+		box-shadow: $box-shadow-small-focus;
+	}
+}
+
+.hsl-button--small {
+
+	padding: 4px 8px;
+	margin-bottom: 2px;
+	background: color( 'main', '4' );
+	color: color( 'main', '2' ) !important;
+	box-shadow: $box-shadow-extra-small;
+	@include body-text( 'text extra small' );
+
+	span {
+		color: color( 'main', '1' ) !important;
+	}
+
+	&:hover {
+		transform: translate(1px, 1px);
+		box-shadow: $box-shadow-extra-small-hover;
+	}
+
+	&:focus {
+		transform: translate(2px, 2px);
+		box-shadow: $box-shadow-extra-small-focus;
+	}
+}
+
+.hsl-image, 
+.hsl-tile-image {
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: -4px;
+    }
+
+    &.hsl-image-profile {
+        height: unset !important;
+        width: 50%;
+        margin-left: auto;
+    }
+
+    &.hsl-tile-image-placeholder {
+        padding: map_get( $spacing, "regular" );
+        padding-top: map_get( $spacing, "large" );
+
+        img {
+            object-fit: contain;
+            transform: scale(0.9);
+        }
+    }
+}
+
+.hsl-image{
+
+	color: color( 'main', '2' );
+	box-shadow: $box-shadow-regular;
+    margin-bottom: map_get( $spacing, "regular" );
+}
