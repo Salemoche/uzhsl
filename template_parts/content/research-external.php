@@ -2,7 +2,7 @@
 /**
 *========================================
 *	
-*	Team Section Template
+*	Research External Section Template
 *
 *   @package Hasel 
 *
@@ -35,7 +35,7 @@ foreach ($research_groups as $research_group) {
         <?php 
             echo $content['title'] !== "" ? '<h2>' . $content['title'] . '</h2>' : ''; 
 
-            get_template_part( 'template_parts/fetch-external-content', '', [ 'content_id' => $content_id, 'type' => 'research', 'options' => 'project?_embed', 'sort_order' => $sort_order ] );
+            get_template_part( 'template_parts/fetch-external-content', '', [ 'content_id' => $content_id, 'type' => 'research', 'options' => 'project?_embed', 'sort_order' => $sort_order, 'site_id' => $site_id ] );
         ?>
     </div>
 </section>
