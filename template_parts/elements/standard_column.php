@@ -4,7 +4,7 @@
 *	
 *	Tile Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -50,7 +50,7 @@ $type = $args['type'];
     <!-- Button -->
     <?php if( !empty( $column_content['button'] )):
         echo '<div class="section__link-container">';
-            echo '<a class="section__link hsl-button"'; 
+            echo '<a class="section__link uzhsl-button"'; 
                 echo isset($column_content['button']['url']) ? 'href="' . $column_content['button']['url'] . '" ' : '';
                 echo isset($column_content['button']['target']) ? 'target="' . $column_content['button']['target'] . '"' : '';
             echo '>';
@@ -65,10 +65,10 @@ $type = $args['type'];
     if ( !empty( $images ) || ($column_content['use_thumbnail'] && has_post_thumbnail( )) ):
         $is_slider = count($images) > 1;
         $media_class = $is_slider ? 'slider' : 'image';
-        $is_profile_picture = $column_content['is_profile_picture'] ? ' hsl-image-profile' : '';
+        $is_profile_picture = $column_content['is_profile_picture'] ? ' uzhsl-image-profile' : '';
 
         ?>
-        <div class="section__media section__<?php echo $media_class ?> hsl-<?php echo $media_class ?><?php echo $is_profile_picture ?>">
+        <div class="section__media section__<?php echo $media_class ?> uzhsl-<?php echo $media_class ?><?php echo $is_profile_picture ?>">
             <?php if( $is_slider ): 
             
                 get_template_part( 'template_parts/elements/slider', '', [ 'slides' => $images, 'type' => 'image' ] );
@@ -82,7 +82,7 @@ $type = $args['type'];
             endif; ?>
         </div>
     <?php elseif ( $column_content['video'] !== null ): ?>
-        <div class="section__media section__video hsl-video">
+        <div class="section__media section__video uzhsl-video">
             <?php echo $column_content['video'] ?>
         </div>
     <?php endif; ?>
@@ -97,14 +97,14 @@ $type = $args['type'];
     }
 
     if ( !empty( $meta_box ) ): ?>
-        <table class="section__meta-box hsl-meta-box>">
+        <table class="section__meta-box uzhsl-meta-box>">
             <tbod>
             <?php foreach ($meta_box as $item): ?>
-                <tr class="hsl-meta-box__item">
-                    <td class="hsl-meta-box__item__title">
+                <tr class="uzhsl-meta-box__item">
+                    <td class="uzhsl-meta-box__item__title">
                         <?php echo $item['title']; ?>
                     </td>
-                    <td class="hsl-meta-box__item__text">
+                    <td class="uzhsl-meta-box__item__text">
                         <?php echo $item['text']; ?>
                     </td>
                 </tr>

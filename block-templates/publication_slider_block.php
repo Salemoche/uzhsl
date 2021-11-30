@@ -4,7 +4,7 @@
 *
 *   Standard block
 *
-*   @package Hasel
+*   @package UZHSL
 *   
 * ============================================= */
 
@@ -12,7 +12,7 @@ $id = $block['id'];
 
 ?>
 
-<div class="hsl-publication-slider-block" id="<?php echo $id; ?>">
+<div class="uzhsl-publication-slider-block" id="<?php echo $id; ?>">
     <div class="news-block__title"><?php the_field('title'); ?></div>
     <?php
     // The Query

@@ -2,12 +2,12 @@
 /**
  * Enqueues all Assets
  * 
- * @package Hasel
+ * @package UZHSL
  */
 
-namespace HaselNamespace\classes;
+namespace UZHSLNamespace\classes;
 
-use HaselNamespace\traits\Singleton;
+use UZHSLNamespace\traits\Singleton;
 
 class Assets {
     use Singleton;
@@ -27,8 +27,8 @@ class Assets {
     public function register_styles() {
         
         // Register Styles
-        wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( HASEL_DIR_PATH . '/style.css'), 'all' );
-        wp_register_style( 'main-css', HASEL_BUILD_CSS_URI . '/main.css', [], filemtime( HASEL_BUILD_CSS_DIR_PATH . '/main.css'), 'all' );
+        wp_register_style( 'style-css', get_stylesheet_uri(), [], filemtime( UZHSL_DIR_PATH . '/style.css'), 'all' );
+        wp_register_style( 'main-css', UZHSL_BUILD_CSS_URI . '/main.css', [], filemtime( UZHSL_BUILD_CSS_DIR_PATH . '/main.css'), 'all' );
         wp_register_style( 'swiper-css', 'https://unpkg.com/swiper@7/swiper-bundle.min.css', [], false, 'all' );
         
         // Enqueue Styles
@@ -40,7 +40,7 @@ class Assets {
     public function register_scripts() {
 
         // Register Scripts
-        wp_register_script( 'main-js', HASEL_BUILD_JS_URI . '/main.js', [ 'jquery' ], filemtime( HASEL_BUILD_JS_DIR_PATH . '/main.js'), true );
+        wp_register_script( 'main-js', UZHSL_BUILD_JS_URI . '/main.js', [ 'jquery' ], filemtime( UZHSL_BUILD_JS_DIR_PATH . '/main.js'), true );
         wp_register_script( 'swpier-js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js', [], false, false );
     
         // Enqueue Scripts
@@ -49,7 +49,7 @@ class Assets {
     }
 
     // public function enqueue_editor_assets() {
-    //     $asset_config_file = sprintf('%s/assets.php', HASEL_BUILD_PATH);
+    //     $asset_config_file = sprintf('%s/assets.php', UZHSL_BUILD_PATH);
 
     //     if ( !file_exists( $asset_config_file ) ) {
     //         return;

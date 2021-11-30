@@ -9,12 +9,12 @@ class ComposerStaticInit17a82fb40b8c29162b80656e4813fdf8
     public static $prefixLengthsPsr4 = array (
         'H' => 
         array (
-            'HaselNamespace\\' => 15,
+            'UZHSLNamespace\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'HaselNamespace\\' => 
+        'UZHSLNamespace\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc',
         ),
@@ -22,11 +22,11 @@ class ComposerStaticInit17a82fb40b8c29162b80656e4813fdf8
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'HaselNamespace\\classes\\Assets' => __DIR__ . '/../..' . '/inc/classes/Assets.php',
-        'HaselNamespace\\classes\\Blocks' => __DIR__ . '/../..' . '/inc/classes/Blocks.php',
-        'HaselNamespace\\classes\\Menus' => __DIR__ . '/../..' . '/inc/classes/Menus.php',
-        'HaselNamespace\\classes\\Theme' => __DIR__ . '/../..' . '/inc/classes/Theme.php',
-        'HaselNamespace\\traits\\Singleton' => __DIR__ . '/../..' . '/inc/traits/Singleton.php',
+        'UZHSLNamespace\\classes\\Assets' => __DIR__ . '/../..' . '/inc/classes/Assets.php',
+        'UZHSLNamespace\\classes\\Blocks' => __DIR__ . '/../..' . '/inc/classes/Blocks.php',
+        'UZHSLNamespace\\classes\\Menus' => __DIR__ . '/../..' . '/inc/classes/Menus.php',
+        'UZHSLNamespace\\classes\\Theme' => __DIR__ . '/../..' . '/inc/classes/Theme.php',
+        'UZHSLNamespace\\traits\\Singleton' => __DIR__ . '/../..' . '/inc/traits/Singleton.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -3,12 +3,12 @@
 /**
  * Register Block Classes
  * 
- * @package HASEL
+ * @package UZHSL
  */
 
-namespace HaselNamespace\classes;
+namespace UZHSLNamespace\classes;
 
-use HaselNamespace\traits\Singleton;
+use UZHSLNamespace\traits\Singleton;
 
 class Blocks {
     use Singleton;
@@ -24,11 +24,11 @@ class Blocks {
         
         $category_slugs = wp_list_pluck( $categories, 'slug' );
 
-        return in_array( 'hasel', $category_slugs, true) ? $categories : 
+        return in_array( 'uzhsl', $category_slugs, true) ? $categories : 
             array_merge ([
                     [
-                        'slug' => 'hasel',
-                        'title' => __( 'Hasel Blocks', 'hasel' ),
+                        'slug' => 'uzhsl',
+                        'title' => __( 'UZHSL Blocks', 'uzhsl' ),
                         'icon' => 'table-row-after'
                     ]
                 ], 
@@ -43,8 +43,8 @@ class Blocks {
                 'name'              => 'standard_block',
                 'title'             => __('Standard Block'),
                 'description'       => __('The standard 5 – 1 – 6 Block'),
-                'render_template'   => HASEL_BLOCK_TEMPLATE_DIR . '/standard_block.php',
-                'category'          => 'hasel',
+                'render_template'   => UZHSL_BLOCK_TEMPLATE_DIR . '/standard_block.php',
+                'category'          => 'uzhsl',
                 'mode'              => 'auto',
                 'align'             => 'full',
                 'icon'              => 'dashicons-welcome-widgets-menus',
@@ -56,8 +56,8 @@ class Blocks {
                 'name'              => 'news_block',
                 'title'             => __('News Block'),
                 'description'       => __('The News Block'),
-                'render_template'   => HASEL_BLOCK_TEMPLATE_DIR . '/news_block.php',
-                'category'          => 'hasel',
+                'render_template'   => UZHSL_BLOCK_TEMPLATE_DIR . '/news_block.php',
+                'category'          => 'uzhsl',
                 'mode'              => 'auto',
                 'align'             => 'full',
                 'icon'              => 'dashicons-welcome-widgets-menus',
@@ -69,8 +69,8 @@ class Blocks {
                 'name'              => 'publication_slider_block',
                 'title'             => __('Publication Slider Block'),
                 'description'       => __('Selection of Publications'),
-                'render_template'   => HASEL_BLOCK_TEMPLATE_DIR . '/publication_slider_block.php',
-                'category'          => 'hasel',
+                'render_template'   => UZHSL_BLOCK_TEMPLATE_DIR . '/publication_slider_block.php',
+                'category'          => 'uzhsl',
                 'mode'              => 'auto',
                 'align'             => 'full',
                 'icon'              => 'dashicons-welcome-widgets-menus',

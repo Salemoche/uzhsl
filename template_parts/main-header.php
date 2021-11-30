@@ -2,24 +2,24 @@
 /**
  * Creates the Navigation Menu
  * 
- * @package HaselNamespace
+ * @package UZHSLNamespace
  */
 
-$menu_class = HaselNamespace\classes\Menus::get_instance();
-$header_menu_id = $menu_class->get_menu_id('hasel-header-menu');
+$menu_class = UZHSLNamespace\classes\Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id('uzhsl-header-menu');
 $header_menu = wp_get_nav_menu_items( $header_menu_id );
 $the_post_id = $post ? $post->ID : 0;
 ?>
 
-<nav class="navbar hsl-navigation sm-row">
+<nav class="navbar uzhsl-navigation sm-row">
 
-    <div class="hsl-navigation-container sm-block">
+    <div class="uzhsl-navigation-container sm-block">
 
-        <a href="<?php echo get_home_url( ) ?> " class="hsl-navigation__logo sm-col sm-small-3 sm-medium-2 sm-large-2">
+        <a href="<?php echo get_home_url( ) ?> " class="uzhsl-navigation__logo sm-col sm-small-3 sm-medium-2 sm-large-2">
             <?php echo wp_get_attachment_image( get_field('logo_color', 'option') ); ?>
         </a>
 
-        <div class="hsl-navigation__menu hsl-header-menu sm-col sm-small-3 sm-large-10" id="header-menu">
+        <div class="uzhsl-navigation__menu uzhsl-header-menu sm-col sm-small-3 sm-large-10" id="header-menu">
             <?php
             if ( !empty( $header_menu ) && is_array( $header_menu) ) :
                 ?>
@@ -79,6 +79,6 @@ $the_post_id = $post ? $post->ID : 0;
             </form> -->
         </div>
 
-        <div class="hsl-navigation__button"></div>
+        <div class="uzhsl-navigation__button"></div>
     </div>
 </nav>

@@ -7,9 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'HaselNamespace\\classes\\Assets' => $baseDir . '/inc/classes/Assets.php',
-    'HaselNamespace\\classes\\Blocks' => $baseDir . '/inc/classes/Blocks.php',
-    'HaselNamespace\\classes\\Menus' => $baseDir . '/inc/classes/Menus.php',
-    'HaselNamespace\\classes\\Theme' => $baseDir . '/inc/classes/Theme.php',
-    'HaselNamespace\\traits\\Singleton' => $baseDir . '/inc/traits/Singleton.php',
+    'UZHSLNamespace\\classes\\Assets' => $baseDir . '/inc/classes/Assets.php',
+    'UZHSLNamespace\\classes\\Blocks' => $baseDir . '/inc/classes/Blocks.php',
+    'UZHSLNamespace\\classes\\Menus' => $baseDir . '/inc/classes/Menus.php',
+    'UZHSLNamespace\\classes\\Theme' => $baseDir . '/inc/classes/Theme.php',
+    'UZHSLNamespace\\traits\\Singleton' => $baseDir . '/inc/traits/Singleton.php',
 );

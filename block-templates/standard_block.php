@@ -4,7 +4,7 @@
 *
 *   Standard block
 *
-*   @package Hasel
+*   @package UZHSL
 *   
 * ============================================= */
 
@@ -12,7 +12,7 @@ $id = $block['id'];
 
 ?>
 
-<div class="hsl-_standard-block standard-block" id="<?php echo $id; ?>">
+<div class="uzhsl-_standard-block standard-block" id="<?php echo $id; ?>">
     <?php
     // Flexible Content
     if( have_rows('standard_content') ): while ( have_rows('standard_content') ) : the_row();

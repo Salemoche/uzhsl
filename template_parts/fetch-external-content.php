@@ -4,7 +4,7 @@
 *	
 *	External Content Script
 *
-*   @package HaselNamespace
+*   @package UZHSLNamespace
 *
 *========================================*/
 
@@ -145,9 +145,9 @@ $research_groups = get_field('research_groups', 'option');
                     console.log( teamMember );
 
                     content = `
-                        <div class="hsl-tile hsl-tile-team" data-href="${params.url}">
-                            <div class="hsl-tile-wrapper">
-                                <div class="tile__image hsl-tile-image hsl-tile-image-thumbnail"><img src="${params.imageUrl}"/></div>
+                        <div class="uzhsl-tile uzhsl-tile-team" data-href="${params.url}">
+                            <div class="uzhsl-tile-wrapper">
+                                <div class="tile__image uzhsl-tile-image uzhsl-tile-image-thumbnail"><img src="${params.imageUrl}"/></div>
                                 <div class="tile__content">
                                     <h5 class="tile__title">${params.name}</h5>
                                     <div class="tile__position">${params.position}</div>
@@ -190,14 +190,14 @@ $research_groups = get_field('research_groups', 'option');
                 // getCategoryButtons( )
 
                 content = `
-                    <div class="hsl-tile hsl-tile-project" data-href="${params.url}">
-                        <div class="hsl-tile-wrapper">
-                            <div class="tile__image hsl-tile-image hsl-tile-image-thumbnail"><img src="${params.imageUrl}"/></div>
+                    <div class="uzhsl-tile uzhsl-tile-project" data-href="${params.url}">
+                        <div class="uzhsl-tile-wrapper">
+                            <div class="tile__image uzhsl-tile-image uzhsl-tile-image-thumbnail"><img src="${params.imageUrl}"/></div>
                             <div class="tile__content">
                                 <h5 class="tile__title">${params.name}</h5>
                                 <div class="tile__position">${params.position}</div>
                                 <div class="tile__additional-content">${params.additionalContent}</div>
-                                <div class="tile__tags hsl-tags">
+                                <div class="tile__tags uzhsl-tags">
                                     ${params.categories}
                                 </div>
                             </div>
@@ -225,7 +225,7 @@ $research_groups = get_field('research_groups', 'option');
         siteCategories.forEach( category => {
 
             if ( categoryIds.includes(category.id) ) {
-                buttonString += `<div class="hsl-button hsl-button--small hsl-tag ${category.siteId}" data-href="${category.name}" ><span> ${category.name}</span></div>`
+                buttonString += `<div class="uzhsl-button uzhsl-button--small uzhsl-tag ${category.siteId}" data-href="${category.name}" ><span> ${category.name}</span></div>`
             }
         })
 

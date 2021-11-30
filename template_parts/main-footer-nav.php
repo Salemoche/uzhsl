@@ -2,18 +2,18 @@
 /**
  * Creates the Footer
  * 
- * @package HaselNamespace
+ * @package UZHSLNamespace
  */
 
-$menu_class = HaselNamespace\classes\Menus::get_instance();
-$footer_menu_id = $menu_class->get_menu_id('hasel-footer-menu');
+$menu_class = UZHSLNamespace\classes\Menus::get_instance();
+$footer_menu_id = $menu_class->get_menu_id('uzhsl-footer-menu');
 $footer_menu = wp_get_nav_menu_items( $footer_menu_id );
 $the_post_id = $post ? $post->ID : 0;
 ?>
 
-<nav class="hasel-footer-navigation">
+<nav class="uzhsl-footer-navigation">
 
-    <div class="hasel-footer-navigation hasel-footer-menu" id="footer-menu">
+    <div class="uzhsl-footer-navigation uzhsl-footer-menu" id="footer-menu">
         <?php
         if ( !empty( $footer_menu ) && is_array( $footer_menu) ) :
             ?>

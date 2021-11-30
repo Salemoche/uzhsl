@@ -2,16 +2,16 @@
 /**
  * ========================================
  * 
- * Bootstrap the Hasel Theme
+ * Bootstrap the UZHSL Theme
  * 
- * @package Hasel
+ * @package UZHSL
  * 
  * ========================================
  */
 
-namespace HaselNamespace\classes;
+namespace UZHSLNamespace\classes;
 
-use HaselNamespace\traits\Singleton;
+use UZHSLNamespace\traits\Singleton;
 
 class Theme {
     use Singleton;
@@ -114,8 +114,8 @@ class Theme {
             register_post_type('publication',
                 array(
                     'labels'      => array(
-                        'name'          => __('Publications', 'hasel'),
-                        'singular_name' => __('Publication', 'hasel'),
+                        'name'          => __('Publications', 'uzhsl'),
+                        'singular_name' => __('Publication', 'uzhsl'),
                     ),
                     'public'      => true,
                     'has_archive' => true,
@@ -140,8 +140,8 @@ class Theme {
             register_post_type('project',
                 array(
                     'labels'      => array(
-                        'name'          => __('Research', 'hasel'),
-                        'singular_name' => __('Research', 'hasel'),
+                        'name'          => __('Research', 'uzhsl'),
+                        'singular_name' => __('Research', 'uzhsl'),
                     ),
                     'public'      => true,
                     'has_archive' => false,
@@ -167,8 +167,8 @@ class Theme {
             // register_post_type('team',
             //     array(
             //         'labels'      => array(
-            //             'name'          => __('Team Member', 'hasel'),
-            //             'singular_name' => __('Team Member', 'hasel'),
+            //             'name'          => __('Team Member', 'uzhsl'),
+            //             'singular_name' => __('Team Member', 'uzhsl'),
             //         ),
             //         'public'      => true,
             //         'has_archive' => true,
@@ -189,8 +189,8 @@ class Theme {
             register_post_type('teachings',
                 array(
                     'labels'      => array(
-                        'name'          => __('Teaching', 'hasel'),
-                        'singular_name' => __('Teaching', 'hasel'),
+                        'name'          => __('Teaching', 'uzhsl'),
+                        'singular_name' => __('Teaching', 'uzhsl'),
                     ),
                     'public'      => true,
                     'has_archive' => true,

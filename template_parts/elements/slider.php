@@ -4,7 +4,7 @@
 *	
 *	Tile Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -22,16 +22,16 @@ $slides = $args['slides'];
 
 ?>
 
-<div class="hsl-slider swiper">
+<div class="uzhsl-slider swiper">
     <div class="swiper-wrapper">
     <?php foreach ($slides as $slide) :?>
         <div class="swiper-slide">
         <?php if ( $type === 'publication') : ?>
-            <div class="hsl-slide hsl-slide-publication">
+            <div class="uzhsl-slide uzhsl-slide-publication">
                 <?php createStandardBlock($slide, 'card') ?>
             </div>
         <?php elseif ( $type === 'image') : ?>
-            <div class="hsl-slide hsl-slide-image">
+            <div class="uzhsl-slide uzhsl-slide-image">
                 <?php echo wp_get_attachment_image($slide, 'large'); ?>
             </div>
         <?php endif; ?>

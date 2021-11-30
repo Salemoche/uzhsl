@@ -4,7 +4,7 @@
 *	
 *	Tile Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -23,9 +23,9 @@ $post_id = $args['id'] ?: get_the_ID();
 $post_categories = salemoche_get_categories($post_id);
 
 if( !empty($post_categories)) {
-    echo '<div class="tile__tags hsl-tags">';
+    echo '<div class="tile__tags uzhsl-tags">';
     foreach ($post_categories as $category) {
-        echo '<div class="hsl-button hsl-button--small hsl-tag" data-href="' . $category->name . '" ><span>' . $category->name . '</span></div>';
+        echo '<div class="uzhsl-button uzhsl-button--small uzhsl-tag" data-href="' . $category->name . '" ><span>' . $category->name . '</span></div>';
     }
     echo '</div>';
 }

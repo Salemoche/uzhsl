@@ -4,11 +4,11 @@
 *	
 *	Loading Template Part
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 ?>
 
-<div class="hsl-loading visible">
-    <div class="hsl-loading__spinner"></div>
+<div class="uzhsl-loading visible">
+    <div class="uzhsl-loading__spinner"></div>
 </div>

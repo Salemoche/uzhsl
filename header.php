@@ -2,7 +2,7 @@
 /**
  * Header Template
  * 
- * @package Hasel
+ * @package UZHSL
  */
 ?>
 
@@ -25,4 +25,4 @@ if ( function_exists( 'wp_body_open')){
     <?php get_template_part('template_parts/main', 'header'); ?>
 </header>
 
-<main class="hasel">
+<main class="uzhsl">

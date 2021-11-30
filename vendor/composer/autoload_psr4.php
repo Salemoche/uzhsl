@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'HaselNamespace\\' => array($baseDir . '/inc'),
+    'UZHSLNamespace\\' => array($baseDir . '/inc'),
 );

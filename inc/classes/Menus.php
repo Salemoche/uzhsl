@@ -2,12 +2,12 @@
 /**
  * Register Menus
  * 
- * @package Hasel
+ * @package UZHSL
  */
 
-namespace HaselNamespace\classes;
+namespace UZHSLNamespace\classes;
 
-use HaselNamespace\traits\Singleton;
+use UZHSLNamespace\traits\Singleton;
 
 class Menus {
     use Singleton;
@@ -24,8 +24,8 @@ class Menus {
 
     public function register_menus() {
         register_nav_menus([
-            'hasel-header-menu' => esc_html__( 'Header Menu', 'hasel' ),
-            'hasel-footer-menu' => esc_html__( 'Footer Menu', 'hasel' )
+            'uzhsl-header-menu' => esc_html__( 'Header Menu', 'uzhsl' ),
+            'uzhsl-footer-menu' => esc_html__( 'Footer Menu', 'uzhsl' )
         ]);
     }
 

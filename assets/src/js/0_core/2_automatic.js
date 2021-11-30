@@ -25,7 +25,7 @@ window.salemoche.device = smDevice;
 (function($) {
  
     window.addEventListener("load", function() {
-        $('.hsl-loading').removeClass('visible');
+        $('.uzhsl-loading').removeClass('visible');
     });
 
     $(document).on('ready', () => {
@@ -85,7 +85,7 @@ window.salemoche.device = smDevice;
         //======================
 
         function setColors() {
-            $('.hsl-image, .hsl-slide-image, .hsl-tile, .section__meta-box').each( function () {
+            $('.uzhsl-image, .uzhsl-slide-image, .uzhsl-tile, .section__meta-box').each( function () {
                 const that = $(this);
                 const colorIndex = Math.round(Math.random() * 5);
                 that.css( 'color', window.salemoche.colors[`color${colorIndex}`])

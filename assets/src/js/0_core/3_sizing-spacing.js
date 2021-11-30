@@ -21,22 +21,22 @@
         //======================
 
         function setSizes () {
-            window.salemoche.headerHeight = $('.hsl-navigation').height();
-            window.salemoche.footerHeight = $('.hsl-footer').height();
+            window.salemoche.headerHeight = $('.uzhsl-navigation').height();
+            window.salemoche.footerHeight = $('.uzhsl-footer').height();
 
-            $('main').css('min-height', window.innerHeight - $('.hsl-footer').height() + 90 + 'px');
+            $('main').css('min-height', window.innerHeight - $('.uzhsl-footer').height() + 90 + 'px');
 
-            $('.hsl-image').each( function () {
+            $('.uzhsl-image').each( function () {
                 const image = $(this);
                 image.css('height', image.width() / 1.5 + 'px');
             })
 
-            $('.hsl-tile-image').each( function () {
+            $('.uzhsl-tile-image').each( function () {
                 const image = $(this);
                 image.css('height', image.width() / 1.5 + 'px');
             })
 
-            $('.hsl-tile-team .hsl-tile-image').each( function () {
+            $('.uzhsl-tile-team .uzhsl-tile-image').each( function () {
                 const image = $(this);
                 image.css('height', image.width() + 'px');
             })

@@ -4,7 +4,7 @@
 *	
 *	News Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -19,10 +19,10 @@ $content = $args['content'];
 $button = $content['button'] ?: [];
 
 ?>
-<section class="hsl-section sm-block hsl-section-news">
+<section class="uzhsl-section sm-block uzhsl-section-news">
     <?php echo isset( $content['title'] ) ? '<h2 class="section-title">' . $content['title'] . '</h2>' : ''; ?>
 
-    <div class="hsl-tile-container sm-block">
+    <div class="uzhsl-tile-container sm-block">
         <?php
         // The Query
         $args = [
@@ -39,7 +39,7 @@ $button = $content['button'] ?: [];
     </div>
     <?php if( !empty( $button ) ):
         echo '<div class="section__link-container">';
-            echo '<a class="section__link hsl-button"'; 
+            echo '<a class="section__link uzhsl-button"'; 
                 echo isset($button['url']) ? 'href="' . $button['url'] . '" ' : '';
                 echo isset($button['target']) ? 'target="' . $button['target'] . '"' : '';
             echo '>';

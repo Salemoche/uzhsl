@@ -4,7 +4,7 @@
 *	
 *	Tile Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -29,9 +29,9 @@ $additional_content = get_field( 'tile_content', $post_id ) ?: null;
 
 ?>
 
-<div class="hsl-tile hsl-tile-<?php echo $type; ?>" data-href="<?php echo get_permalink( $post_id ) ?>">
-    <div class="hsl-tile-wrapper">
-        <?php echo isset($image_id) && $type !== 'no_image' ? '<div class="tile__image hsl-tile-image hsl-tile-image-' . $image_type . '">' . wp_get_attachment_image( $image_id, 'medium' ) . '</div>' : '' ?>
+<div class="uzhsl-tile uzhsl-tile-<?php echo $type; ?>" data-href="<?php echo get_permalink( $post_id ) ?>">
+    <div class="uzhsl-tile-wrapper">
+        <?php echo isset($image_id) && $type !== 'no_image' ? '<div class="tile__image uzhsl-tile-image uzhsl-tile-image-' . $image_type . '">' . wp_get_attachment_image( $image_id, 'medium' ) . '</div>' : '' ?>
         <div class="tile__content">
             <?php if (isset($date) && $post->post_type == 'post'): ?>
             <div class="tile__meta">

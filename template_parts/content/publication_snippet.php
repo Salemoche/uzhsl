@@ -4,7 +4,7 @@
 *	
 *	Publication Snippet Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -18,6 +18,6 @@ $args = wp_parse_args(
 $content = $args['content'];
 
 ?>
-<section class="hsl-section sm-block hsl-section-publication-snippet">
+<section class="uzhsl-section sm-block uzhsl-section-publication-snippet">
     <?php echo $content['publication_snippet']; ?>
 </section>

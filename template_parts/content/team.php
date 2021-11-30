@@ -4,7 +4,7 @@
 *	
 *	Team Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -19,8 +19,8 @@ $content = $args['content'];
 $selected_posts = $content['team_members'];
 
 ?>
-<section class="hsl-section sm-block hsl-section-publication-slider">
-    <div class="hsl-tile-container sm-block">
+<section class="uzhsl-section sm-block uzhsl-section-publication-slider">
+    <div class="uzhsl-tile-container sm-block">
         <?php 
             echo $content['title'] !== "" ? '<h2>' . $content['title'] . '</h2>' : ''; 
 

@@ -4,7 +4,7 @@
 *	
 *	Team Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -20,7 +20,7 @@ $content = $args['content'];
 $site_id = $content['site_id'];
 $research_groups = get_field('research_groups', 'option');
 $fetch_url = '';
-$content_id = uniqid('hsl-tile-container-', false);
+$content_id = uniqid('uzhsl-tile-container-', false);
 $sort_order = $content['team_members'];
 
 
@@ -31,8 +31,8 @@ foreach ($research_groups as $research_group) {
 }
 
 ?>
-<section class="hsl-section sm-block hsl-section-publication-slider" id="<?php echo $content_id ?>">
-    <div class="hsl-tile-container sm-block">
+<section class="uzhsl-section sm-block uzhsl-section-publication-slider" id="<?php echo $content_id ?>">
+    <div class="uzhsl-tile-container sm-block">
         <?php 
             echo $content['title'] !== "" ? '<h2>' . $content['title'] . '</h2>' : ''; 
 

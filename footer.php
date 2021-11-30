@@ -2,7 +2,7 @@
 /**
  *  Footer Template
  * 
- *  @package Hasel
+ *  @package UZHSL
  */
 ?>
 

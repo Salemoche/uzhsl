@@ -8,7 +8,7 @@ get_header();
 
 ?>
 
-<div class="hsl-content">
+<div class="uzhsl-content">
     <?php echo get_template_part('template_parts/content' ); ?>
 </div>
     

@@ -2,14 +2,14 @@
 /**
 * Template Name: Blog
 *
-* @package Hasel
+* @package UZHSL
 */
 
 get_header();
 ?>
 
-<div class="hsl-content hsl-blog">
-    <div class="hsl-section sm-block">
+<div class="uzhsl-content uzhsl-blog">
+    <div class="uzhsl-section sm-block">
         <h1><?php the_title() ?></h1>
         <?php
         // The Query
@@ -18,7 +18,7 @@ get_header();
         ];
         $query = new WP_Query( $args );
         
-        echo '<div class="hsl-tile-container sm-block">';
+        echo '<div class="uzhsl-tile-container sm-block">';
         if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
         
             get_template_part( 'template_parts/elements/tile' );

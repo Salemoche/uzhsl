@@ -4,7 +4,7 @@
 *	
 *	Content Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -74,7 +74,7 @@ if ( get_field('content') !== null && !empty( get_field('content')) ){
 //                 break;
 //         }
 
-//         echo '<section class="hsl-section sm-block hsl-section-' . $type . '">' . $content . '</section>';
+//         echo '<section class="uzhsl-section sm-block uzhsl-section-' . $type . '">' . $content . '</section>';
 //     }
 // }
 

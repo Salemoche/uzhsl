@@ -2,10 +2,10 @@
 /**
  * Creates Singleton Trait that checks if an Object has been instantiatet yet and if not, creates new instance of the Class;
  * 
- * @package Hasel
+ * @package UZHSL
  */
 
-namespace HaselNamespace\traits;
+namespace UZHSLNamespace\traits;
 
 trait Singleton {
     public function __construct() {
@@ -24,7 +24,7 @@ trait Singleton {
         if( !isset( $instance[$called_class])) {
             $instance[$called_class] = new $called_class();
 
-            do_action( sprintf( 'hasel_singleton_init%s', $called_class));
+            do_action( sprintf( 'uzhsl_singleton_init%s', $called_class));
         }
 
         return $instance[$called_class];

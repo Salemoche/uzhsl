@@ -213,12 +213,12 @@ input[type="search"]::-webkit-search-cancel-button {
 /**
 *========================================
 *	
-*	Hasel Atoms
+*	UZHSL Atoms
 *	
 *========================================
 */
 
-.hsl-button,
+.uzhsl-button,
 button {
 	padding: 8px 16px;
 	margin-bottom: 4px;
@@ -246,7 +246,7 @@ button {
 	}
 }
 
-.hsl-button--small {
+.uzhsl-button--small {
 
 	padding: 4px 8px;
 	margin-bottom: 2px;
@@ -270,8 +270,8 @@ button {
 	}
 }
 
-.hsl-image, 
-.hsl-tile-image {
+.uzhsl-image, 
+.uzhsl-tile-image {
 
     img {
         width: 100%;
@@ -280,13 +280,13 @@ button {
         margin-bottom: -4px;
     }
 
-    &.hsl-image-profile {
+    &.uzhsl-image-profile {
         height: unset !important;
         width: 50%;
         margin-left: auto;
     }
 
-    &.hsl-tile-image-placeholder {
+    &.uzhsl-tile-image-placeholder {
         padding: map_get( $spacing, "regular" );
         padding-top: map_get( $spacing, "large" );
 
@@ -297,7 +297,7 @@ button {
     }
 }
 
-.hsl-image{
+.uzhsl-image{
 
 	color: color( 'main', '2' );
 	box-shadow: $box-shadow-regular;

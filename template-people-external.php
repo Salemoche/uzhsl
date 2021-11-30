@@ -2,16 +2,16 @@
 /**
 * Template Name: People (External Data)
 *
-* @package Hasel
+* @package UZHSL
 */
 
 get_header();
 ?>
 
-<div class="hsl-content hsl-people">
+<div class="uzhsl-content uzhsl-people">
     <?php echo get_template_part('template_parts/content' ); ?>
     
-    <div class="hsl-people__grid">
+    <div class="uzhsl-people__grid">
         <?php
         // The Query
         $args = [

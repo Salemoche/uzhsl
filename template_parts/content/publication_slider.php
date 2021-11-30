@@ -4,7 +4,7 @@
 *	
 *	Publication Slider Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -20,14 +20,14 @@ $button = $content['button'] ?: [];
 $selected_posts = $content['publication_slider'];
 
 ?>
-<section class="hsl-section sm-block hsl-section-publication-slider">
+<section class="uzhsl-section sm-block uzhsl-section-publication-slider">
     <?php echo isset( $content['title'] ) ? '<h2 class="section-title">' . $content['title'] . '</h2>' : ''; ?>
 
     <?php get_template_part( 'template_parts/elements/slider', '', [ 'slides' => $selected_posts, 'type' => 'publication' ] ); ?>
 
     <?php if( !empty( $button ) ):
         echo '<div class="section__link-container">';
-            echo '<a class="section__link hsl-button"'; 
+            echo '<a class="section__link uzhsl-button"'; 
                 echo isset($button['url']) ? 'href="' . $button['url'] . '" ' : '';
                 echo isset($button['target']) ? 'target="' . $button['target'] . '"' : '';
             echo '>';

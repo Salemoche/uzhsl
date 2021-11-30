@@ -10,7 +10,7 @@
     justify-content: space-between;
 }
 
-.hsl-tile-container {
+.uzhsl-tile-container {
     justify-content: flex-start;
     display: flex;
     align-content: center;
@@ -23,8 +23,8 @@
     // }
 }
 
-.hsl-footer,
-.hsl-content > .hsl-section {
+.uzhsl-footer,
+.uzhsl-content > .uzhsl-section {
     > * {
         width: calc(100vw - (2 * #{map_get( $spacing, "large" )} ));
         max-width: calc(#{$content_width} - (2 * #{map_get( $spacing, "large" )} ));
@@ -56,15 +56,15 @@
 *========================================
 */
 
-.hsl-section {
+.uzhsl-section {
     padding-top: map_get( $spacing, "large" );
     padding-bottom: map_get( $spacing, "extra-large" );
 
-    &.hsl-section-card {
+    &.uzhsl-section-card {
 
         align-items: stretch;
 
-        .hsl-column-right {
+        .uzhsl-column-right {
             display: flex;
             align-content: space-between;
             flex-wrap: wrap;
@@ -75,46 +75,46 @@
         }
     }
 
-    &.hsl-section-publication-snippet {
+    &.uzhsl-section-publication-snippet {
         iframe {
             border: none;
         }
     }
 
-    .hsl-column-right {
+    .uzhsl-column-right {
 
         .section__link-container {
             justify-content: flex-end;
 
-            .hsl-button {
+            .uzhsl-button {
                 margin-right: 0;
             }
         }
     }
 
-    .hsl-column-left {
+    .uzhsl-column-left {
 
         .section__link-container {
             justify-content: flex-start;
 
-            .hsl-button {
+            .uzhsl-button {
                 margin-left: 0;
             }
         }
     }
 
-    .hsl-column-right {
+    .uzhsl-column-right {
 
         .section__link-container {
             justify-content: flex-end;
 
-            .hsl-button {
+            .uzhsl-button {
                 margin-right: 0;
             }
         }
     }
 
-    .hsl-button {
+    .uzhsl-button {
         margin: 0 auto;
         margin-bottom: 4px;
     }
@@ -145,7 +145,7 @@
     }
 
     @include mq($until: 'medium') {
-        .hsl-column {
+        .uzhsl-column {
 
             .section__media,
             .section__position,
@@ -161,7 +161,7 @@
             .section__link-container {
                 justify-content: center;
     
-                .hsl-button {
+                .uzhsl-button {
                     margin: auto;
                 }
             }
@@ -169,7 +169,7 @@
     }
 }
 
-.hsl-section-selected-projects {
+.uzhsl-section-selected-projects {
     width: 100%;
     max-width: unset;
     flex-direction: column;
@@ -181,7 +181,7 @@
         margin-right: auto;
     }
 
-    .hsl-section-card {
+    .uzhsl-section-card {
         width: 100vw;
         max-width: unset;
         padding: map_get( $spacing, "extra-large" ) map_get( $spacing, "large" );
@@ -198,19 +198,19 @@
 
     @include mq($until: 'medium') {
         > h2,
-        .hsl-section-card > * {
+        .uzhsl-section-card > * {
             width: calc(100vw - (2 * #{map_get( $spacing, "regular" )} ));
             max-width: calc(#{$content_width} - (2 * #{map_get( $spacing, "regular" )} ));
         }
 
-        .hsl-section-card {
+        .uzhsl-section-card {
             padding: map_get( $spacing, "large" ) 0;
         }
     }
 
     @include mq($until: 'small') {
         > h2,
-        .hsl-section-card > * {
+        .uzhsl-section-card > * {
             width: calc(100vw - (2 * #{map_get( $spacing, "small" )} ));
             max-width: calc(#{$content_width} - (2 * #{map_get( $spacing, "small" )} ));
         }
@@ -225,7 +225,7 @@
 *========================================
 */
 
-.hsl-tile {
+.uzhsl-tile {
     background: color( 'main', '1' );
     color: color( 'main', '4' );
     padding: 0 !important;
@@ -246,7 +246,7 @@
         box-shadow: $box-shadow-regular-focus;
     }
 
-    &.hsl-tile-team {
+    &.uzhsl-tile-team {
         width: calc( 100% / 5 - 26px );
 
         .tile__additional-content a {
@@ -254,7 +254,7 @@
         }
     }
 
-    &.hsl-tile-project {
+    &.uzhsl-tile-project {
         width: calc( 100% / 3 - 26px );
 
         .tile__additional-content a {
@@ -274,7 +274,7 @@
         }
     }
     
-    .hsl-tile-wrapper {
+    .uzhsl-tile-wrapper {
         height: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -352,15 +352,15 @@
 *========================================
 */
 
-.hsl-tags {
+.uzhsl-tags {
     margin-bottom: map_get( $spacing, "small" );
-    .hsl-tag {
+    .uzhsl-tag {
         margin-right: map_get( $spacing, "extra-small" );
         cursor: pointer;
     }
 }
 
-.hsl-column > .hsl-tags {
+.uzhsl-column > .uzhsl-tags {
     margin-top: -8px;
     margin-bottom: map_get( $spacing, "regular" );
 }
@@ -373,14 +373,14 @@
 *========================================
 */
 
-.hsl-navigation {
+.uzhsl-navigation {
     background: white;
     width: 100%;
     position: fixed;
     z-index: $z-index-navigation;
     padding: map_get( $spacing, "large" );
 
-    .hsl-navigation-container {
+    .uzhsl-navigation-container {
         width: 100%;
 
         .header-menu__list {
@@ -419,7 +419,7 @@
             }
         }
 
-        .hsl-navigation__button {
+        .uzhsl-navigation__button {
             width: 36px;
             height: 36px;
             position: absolute;
@@ -438,7 +438,7 @@
         // background: none;
         padding: map_get( $spacing, "regular" );
 
-        .hsl-navigation-container {
+        .uzhsl-navigation-container {
 
             #header-menu {
                 position: absolute;
@@ -493,7 +493,7 @@
                 }
             }
 
-            .hsl-navigation__button {
+            .uzhsl-navigation__button {
                 display: inherit;
     
                 @include bg('burger.svg');
@@ -501,7 +501,7 @@
         }
 
         &.active {
-            .hsl-navigation-container {
+            .uzhsl-navigation-container {
                 #header-menu {
                     right: 0;
                 }
@@ -513,7 +513,7 @@
 
         padding: map_get( $spacing, "small" );
 
-        .hsl-navigation-container {
+        .uzhsl-navigation-container {
 
             #header-menu {
                 width: 100vw;
@@ -548,7 +548,7 @@
                 }
             }
 
-            .hsl-navigation__button {
+            .uzhsl-navigation__button {
                 display: inherit;
     
                 @include bg('burger.svg');
@@ -556,7 +556,7 @@
         }
 
         &.active {
-            .hsl-navigation-container {
+            .uzhsl-navigation-container {
                 #header-menu {
                     right: 0;
                 }
@@ -573,7 +573,7 @@
 *========================================
 */
 
-.hsl-footer {
+.uzhsl-footer {
     padding: map_get( $spacing, "large" ) map_get( $spacing, "regular" );
     padding-bottom: map_get( $spacing, "regular" );
     background: color( 'main', '1' );
@@ -592,21 +592,21 @@
         }
     }
 
-    .hsl-footer__content {
+    .uzhsl-footer__content {
 
         align-content: center;
         align-items: center;
 
 
-        .hsl-footer__column {
+        .uzhsl-footer__column {
 
-            &.hsl-footer__summary {
+            &.uzhsl-footer__summary {
                 p {
                     @include body-text( 'text small' );
                 }
             }
         
-            &.hsl-footer__menu {
+            &.uzhsl-footer__menu {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -634,8 +634,8 @@
                 }
             }
 
-            &.hsl-footer__address {
-                .hsl-footer__address__logo {
+            &.uzhsl-footer__address {
+                .uzhsl-footer__address__logo {
                     width: 225px;
                     margin-left: auto;
                     max-width: 20vw;
@@ -649,7 +649,7 @@
 
     }
 
-    .hsl-footer__copyright {
+    .uzhsl-footer__copyright {
         text-align: center;
         justify-content: center;
         width: 100vw;
@@ -663,18 +663,18 @@
     }
 
     @include mq($until: 'small') {
-        .hsl-footer__content {
-            .hsl-footer__column {
+        .uzhsl-footer__content {
+            .uzhsl-footer__column {
 
-                &.hsl-footer__summary {
+                &.uzhsl-footer__summary {
                     margin-bottom: map_get( $spacing, "regular" );
                 }
 
-                &.hsl-footer__address {
+                &.uzhsl-footer__address {
                     margin-bottom: map_get( $spacing, "regular" );
                     height: unset;
                     
-                    .hsl-footer__address__logo {
+                    .uzhsl-footer__address__logo {
                         margin-left: 0;
                         margin-right: auto;
                     }
@@ -684,7 +684,7 @@
                     }
                 }
 
-                &.hsl-footer__menu {
+                &.uzhsl-footer__menu {
                     margin-bottom: map_get( $spacing, "regular" );
                     height: unset;
                 }
@@ -701,11 +701,11 @@
 *========================================
 */
 
-.hsl-slider {
+.uzhsl-slider {
     // max-height: 50vh;
     cursor: grab;
 
-    .hsl-slide-image {
+    .uzhsl-slide-image {
         box-shadow: $box-shadow-regular;
         transform: scale(0.9);
 
@@ -760,11 +760,11 @@
         }
     }
 
-    .hsl-meta-box__item {
+    .uzhsl-meta-box__item {
         // display: flex;
         // justify-content: space-between;
 
-        .hsl-meta-box__item__title {
+        .uzhsl-meta-box__item__title {
             vertical-align: top;
             font-family: 'Sansation';
             // width: calc(40% + #{map_get( $spacing, "regular" )})
@@ -780,7 +780,7 @@
 *========================================
 */
 
-.hsl-loading {
+.uzhsl-loading {
     position: fixed;
     top: 0;
     left: 0;
@@ -800,7 +800,7 @@
         pointer-events: all;
     }
 
-    .hsl-loading__spinner {
+    .uzhsl-loading__spinner {
         width: 50px;
         height: 50px;
         @include bg('spinner.gif');

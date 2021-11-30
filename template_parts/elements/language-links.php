@@ -4,7 +4,7 @@
 *	
 *	Tile Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 

@@ -2,14 +2,14 @@
 /**
 * Search Results
 *
-* @package Hasel
+* @package UZHSL
 */
 
 get_header();
 ?>
 
-<div class="hsl-search sm-block hsl-section">
-    <h1 class="hsl-search-title"></h1>
+<div class="uzhsl-search sm-block uzhsl-section">
+    <h1 class="uzhsl-search-title"></h1>
     <?php
     if ( have_posts() ) : while ( have_posts() ) : the_post();
     

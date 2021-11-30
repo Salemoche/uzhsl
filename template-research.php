@@ -2,23 +2,23 @@
 /**
 * Template Name: Research
 *
-* @package Hasel
+* @package UZHSL
 */
 
 get_header();
 ?>
 
-<div class="hsl-content hsl-research">
-    <div class="hsl-research__header hsl-header">
-        <div class="hsl-column">
+<div class="uzhsl-content uzhsl-research">
+    <div class="uzhsl-research__header uzhsl-header">
+        <div class="uzhsl-column">
             <?php the_title(); ?>
             <?php the_field( 'lead' ); ?>
         </div>
-        <div class="hsl-column">
+        <div class="uzhsl-column">
             <?php get_the_post_thumbnail( get_the_ID(), 'large' )?>
         </div>
     </div>
-    <div class="hsl-research__list">
+    <div class="uzhsl-research__list">
         <?php
         // The Query
         $args = [

@@ -4,7 +4,7 @@
 *	
 *	Selected Projects Section Template
 *
-*   @package Hasel 
+*   @package UZHSL 
 *
 *========================================*/
 
@@ -20,7 +20,7 @@ $button = $content['button'] ?: [];
 $selected_posts = $content['selected_projects'];
 
 ?>
-<section class="hsl-section sm-block hsl-section-selected-projects">
+<section class="uzhsl-section sm-block uzhsl-section-selected-projects">
     <?php 
     
     echo isset( $content['title'] ) ? '<h2>' . $content['title'] . '</h2>' : ''; 
@@ -34,7 +34,7 @@ $selected_posts = $content['selected_projects'];
 
     <?php if( !empty( $button ) ):
         echo '<div class="section__link-container">';
-            echo '<a class="section__link hsl-button"'; 
+            echo '<a class="section__link uzhsl-button"'; 
                 echo isset($button['url']) ? 'href="' . $button['url'] . '" ' : '';
                 echo isset($button['target']) ? 'target="' . $button['target'] . '"' : '';
             echo '>';
