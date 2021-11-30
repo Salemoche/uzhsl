@@ -30,8 +30,8 @@ foreach ($research_groups as $research_group) {
 }
 
 ?>
-<section class="uzhsl-section sm-block uzhsl-section-publication-slider" id="<?php echo $content_id ?>">
-    <div class="uzhsl-tile-container sm-block">
+<section class="uzhsl-section sm-block uzhsl-section-publication-slider">
+    <div class="uzhsl-tile-container sm-block" id="<?php echo $content_id ?>">
         <?php 
             echo $content['title'] !== "" ? '<h2>' . $content['title'] . '</h2>' : ''; 
 

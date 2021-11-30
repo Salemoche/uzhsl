@@ -32,6 +32,9 @@ if ( get_field('content') !== null && !empty( get_field('content')) ){
             case 'publication_slider_layout':
                 get_template_part('template_parts/content/publication_slider', '', [ 'content' => $section ]);
                 break;
+            case 'publication_slider_external_layout':
+                get_template_part('template_parts/content/publication_slider-external', '', [ 'content' => $section ]);
+                break;
             case 'selected_projects_layout':
                 get_template_part('template_parts/content/selected_projects', '', [ 'content' => $section ]);
                 break;

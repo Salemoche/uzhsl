@@ -19,7 +19,7 @@ $content = $args['content'];
 $button = $content['button'] ?: [];
 $selected_posts = $content['selected_projects'];
 $content_id = uniqid('uzhsl-tile-container-', false);
-$sort_order = $content['selected_projects'];
+$selected_projects = $content['selected_projects'];
 
 ?>
 <section class="uzhsl-section sm-block uzhsl-section-selected-projects">
@@ -30,7 +30,7 @@ $sort_order = $content['selected_projects'];
 
     <div class="uzhsl-tile-container sm-block" id="<?php echo $content_id ?>">
         <?php
-            get_template_part( 'template_parts/fetch-external-content', '', [ 'content_id' => $content_id, 'url' => $fetch_url, 'type' => 'research', 'options' => 'project?_embed', 'sort_order' => $sort_order ] );
+            get_template_part( 'template_parts/fetch-external-content', '', [ 'content_id' => $content_id, 'url' => $fetch_url, 'type' => 'research', 'options' => 'project?_embed', 'sort_order' => $selected_projects ] );
 
             // foreach ($selected_posts as $selected_post) {
             //     get_template_part( 'template_parts/elements/tile', '', [ 'type' => 'project', 'id' => $selected_post->ID ] );   
