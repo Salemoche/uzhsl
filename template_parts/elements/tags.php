@@ -25,7 +25,7 @@ $post_categories = salemoche_get_categories($post_id);
 if( !empty($post_categories)) {
     echo '<div class="tile__tags uzhsl-tags">';
     foreach ($post_categories as $category) {
-        echo '<div class="uzhsl-button uzhsl-button--small uzhsl-tag" data-href="' . $category->name . '" ><span>' . $category->name . '</span></div>';
+        echo '<div class="uzhsl-button uzhsl-button--small uzhsl-tag" data-name="' . $category->name . '"><span>' . $category->name . '</span></div>';
     }
     echo '</div>';
 }

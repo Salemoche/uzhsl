@@ -184,7 +184,7 @@ $research_groups = get_field('research_groups', 'option');
                     imageUrl: project['_embedded']['wp:featuredmedia'] ? project['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url : '',
                     additionalContent: project.acf['tile_content'] || '',
                     url: project.link || '',
-                    categories: getCategoryButtons( categories, project.categories, selectedProject['site_id'] ) || ''
+                    categories: getCategoryButtons( categories, project.categories, selectedProject ) || ''
                 }
 
                 // getCategoryButtons( )
@@ -214,9 +214,12 @@ $research_groups = get_field('research_groups', 'option');
 
     }
 
-    function getCategoryButtons ( allCategories, categoryIds, siteId) {
+    function getCategoryButtons ( allCategories, categoryIds, selectedProject ) {
 
         let buttonString = '';
+        const siteId = selectedProject['site_id'];
+        const url = selectedProject;
+
         
         const siteCategories = allCategories.filter( category => {
             return category.link.toLowerCase().includes(siteId)
@@ -225,11 +228,11 @@ $research_groups = get_field('research_groups', 'option');
         siteCategories.forEach( category => {
 
             if ( categoryIds.includes(category.id) ) {
-                buttonString += `<div class="uzhsl-button uzhsl-button--small uzhsl-tag ${category.siteId}" data-href="${category.name}" ><span> ${category.name}</span></div>`
+                const siteUrl = category.link.replace(`/category/${category.slug}/`, '')
+                buttonString += `<div class="uzhsl-button uzhsl-button--small uzhsl-tag ${category.siteId}" data-name="${category.name}" data-href="${siteUrl}"><span> ${category.name}</span></div>`
             }
         })
 
-        console.log(siteCategories)
 
         return buttonString
 

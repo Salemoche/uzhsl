@@ -37,7 +37,8 @@
             $('.uzhsl-tag').on('click', function (e) {
                 e.stopPropagation();
                 const that = $(this)
-                const searchLink = `/?s=${that.data('href')}`.replace(' ', '+');
+                const baseUrl = that.data('href') || '';
+                const searchLink = `${baseUrl}/?s=${that.data('name')}`.replaceAll(' ', '+');
     
                 if (e.ctrlKey || e.metaKey ) {
                     window.open( searchLink, "_blank")

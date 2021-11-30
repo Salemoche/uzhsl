@@ -1781,7 +1781,8 @@ window.salemoche.device = _plugins_salemoche_wordpress_essentials_assets_src_js_
       $('.uzhsl-tag').on('click', function (e) {
         e.stopPropagation();
         var that = $(this);
-        var searchLink = "/?s=".concat(that.data('href')).replace(' ', '+');
+        var baseUrl = that.data('href') || '';
+        var searchLink = "".concat(baseUrl, "/?s=").concat(that.data('name')).replaceAll(' ', '+');
 
         if (e.ctrlKey || e.metaKey) {
           window.open(searchLink, "_blank");
