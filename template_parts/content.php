@@ -53,6 +53,9 @@ if ( get_field('content') !== null && !empty( get_field('content')) ){
             case 'tile_layout':
                 get_template_part('template_parts/content/tile', '', [ 'content' => $section ]);
                 break;
+            case 'tile_external_layout':
+                get_template_part('template_parts/content/tile-external', '', [ 'content' => $section ]);
+                break;
             default:
                 # code...
                 break;

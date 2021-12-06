@@ -46,6 +46,9 @@ $research_groups = get_field('research_groups', 'option');
         const sortOrder = '<?php echo $sort_order ?>'.replaceAll(' ', '').split(',');
         // const allUrls = <?php echo json_encode($allUrls) ?>;
         const researchGroups = <?php echo json_encode($research_groups) ?>;
+        const placeholderImageUrl = '<?php echo get_field('tile_placeholder', 'option') ?>'
+
+        console.log(placeholderImageUrl);
 
         if ( type === 'team' ) {
             fetch(`<?php echo $url; ?>/wp-json/wp/v2/team?_embed`)
@@ -131,9 +134,27 @@ $research_groups = get_field('research_groups', 'option');
                     allPublications = [...allPublications, ...publication];
                 });
 
+                // Fetch All Teaching
+
+                const teachingPromises = [];
+
+                const allTeachingUrls = researchGroups.map( researchGroup => `${researchGroup.url}/wp-json/wp/v2/teachings?_embed`);
+
+                allTeachingUrls.forEach(url => {
+                    teachingPromises.push( newPromise(url) )
+                });
+
+                const teachings = await Promise.all( teachingPromises );
+                let allTeachings = []
+
+                teachings.forEach(teaching => {
+                    allTeachings = [...allTeachings, ...teaching];
+                });
+
                 const researchGroupData = {
                     projects: allProjects,
                     publications: allPublications,
+                    teachings: allTeachings,
                     categories: allCategories,
                 }
 
@@ -143,6 +164,9 @@ $research_groups = get_field('research_groups', 'option');
                         break;
                     case 'publication':    
                         createPublicationSlider( researchGroupData );
+                        break;
+                    case 'tile':    
+                        createTileArray( researchGroupData );
                         break;
                 }
                 
@@ -161,7 +185,8 @@ $research_groups = get_field('research_groups', 'option');
                             position: teamMember.acf.position || '',
                             email: '',
                             room: '',
-                            imageUrl: teamMember['_embedded']['wp:featuredmedia'] ? teamMember['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url : '',
+                            imageUrl: teamMember['_embedded']['wp:featuredmedia'] && teamMember['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url,
+                            placeholderImageUrl: placeholderImageUrl || '',
                             altText: teamMember['_embedded']['wp:featuredmedia'] ? teamMember['_embedded']['wp:featuredmedia'][0]['alt_text'] : '',
                             additionalContent: teamMember.acf['tile_content'] || '',
                             url: teamMember.link || '',
@@ -170,9 +195,9 @@ $research_groups = get_field('research_groups', 'option');
                         console.log( teamMember );
 
                         content = `
-                            <div class="uzhsl-tile uzhsl-tile-team" data-href="${params.url}">
+                            <div class="uzhsl-tile uzhsl-tile-team uzhsl-external-content" data-href="${params.url}">
                                 <div class="uzhsl-tile-wrapper">
-                                    <div class="tile__image uzhsl-tile-image uzhsl-tile-image-thumbnail"><img src="${params.imageUrl}" alt="${params.altText}"/></div>
+                                    <div class="tile__image uzhsl-tile-image ${ !params.imageUrl && 'uzhsl-tile-image-placeholder' } uzhsl-tile-image-thumbnail"><img src="${params.imageUrl || placeholderImageUrl}" alt="${params.altText}"/></div>
                                     <div class="tile__content">
                                         <h5 class="tile__title">${params.name}</h5>
                                         <div class="tile__position">${params.position}</div>
@@ -208,7 +233,8 @@ $research_groups = get_field('research_groups', 'option');
                         position: project.acf.position || '',
                         email: '',
                         room: '',
-                        imageUrl: project['_embedded']['wp:featuredmedia'] ? project['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url : '',
+                        imageUrl: project['_embedded']['wp:featuredmedia'] && project['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url,
+                        placeholderImageUrl: placeholderImageUrl || '',
                         altText: project['_embedded']['wp:featuredmedia'] ? project['_embedded']['wp:featuredmedia'][0]['alt_text'] : '',
                         additionalContent: project.acf['tile_content'] || '',
                         url: project.link || '',
@@ -218,9 +244,9 @@ $research_groups = get_field('research_groups', 'option');
                     // getCategoryButtons( )
 
                     content = `
-                        <div class="uzhsl-tile uzhsl-tile-project" data-href="${params.url}">
+                        <div class="uzhsl-tile uzhsl-tile-project uzhsl-external-content" data-href="${params.url}">
                             <div class="uzhsl-tile-wrapper">
-                                <div class="tile__image uzhsl-tile-image uzhsl-tile-image-thumbnail"><img src="${params.imageUrl}" alt="${params.altText}"/></div>
+                                <div class="tile__image uzhsl-tile-image ${ !params.imageUrl && 'uzhsl-tile-image-placeholder' } uzhsl-tile-image-thumbnail"><img src="${params.imageUrl || placeholderImageUrl}" alt="${params.altText}"/></div>
                                 <div class="tile__content">
                                     <h5 class="tile__title">${params.name}</h5>
                                     <div class="tile__position">${params.position}</div>
@@ -242,6 +268,53 @@ $research_groups = get_field('research_groups', 'option');
 
         }
 
+        function createTileArray({ teachings }) {
+
+            const selectedTiles = <?php echo json_encode($sort_order) ?>;
+            let content = '';
+            
+            
+            selectedTiles.forEach( selectedTile => { 
+
+                teachings.forEach( (teaching, i) => {
+
+                    console.log( teaching.link, selectedTile['site_id'])
+
+                    if ( teaching.slug !== selectedTile['tile_name'] || !teaching.link.includes(selectedTile['site_id']) ) return
+
+                    params = {
+                            name: teaching.title.rendered || '',
+                            position: teaching.acf.position || '',
+                            additionalContent: teaching.acf['tile_content'] || '',
+                            url: teaching.link || '',
+                        }
+
+                    content = `
+                        <div class="uzhsl-tile uzhsl-tile-no_image uzhsl-external-content" data-href="${params.url}">
+                            <div class="uzhsl-tile-wrapper">
+                                <div class="tile__content">
+                                    <h5 class="tile__title">${params.name}</h5>
+                                    <div class="tile__position">${params.position}</div>
+                                    <div class="tile__additional-content">${params.additionalContent}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                    document.querySelector(`#${contentId}`).append(stringToHTML(content));
+                    
+                    document.querySelector(`#${contentId}`).append(stringToHTML(content));
+                })
+            })
+            
+            // console.log(stringToHTML(content))
+            document.querySelector(`#${contentId}`).append(stringToHTML(content));
+            console.log(document.querySelector(`#${contentId}`))
+
+            window.salemoche.setSizes();
+            window.salemoche.addEventListeners();
+            window.salemoche.initializeSwiper();
+        }
+
         function createPublicationSlider({ publications, categories }) {
 
             const selectedPublications = <?php echo json_encode($sort_order) ?>;
@@ -257,7 +330,8 @@ $research_groups = get_field('research_groups', 'option');
                     params = {
                         name: publication.title.rendered || '',
                         excerpt: publication.excerpt.rendered || '',
-                        imageUrl: publication['_embedded']['wp:featuredmedia'] ? publication['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url : '',
+                        imageUrl: publication['_embedded']['wp:featuredmedia'] && publication['_embedded']['wp:featuredmedia'][0]['media_details'].sizes.medium.source_url,
+                        placeholderImageUrl: placeholderImageUrl || '',
                         altText: publication['_embedded']['wp:featuredmedia'] ? publication['_embedded']['wp:featuredmedia'][0]['alt_text'] : '',
                         additionalContent: publication.acf['tile_content'] || '',
                         url: publication.link || '',
@@ -266,13 +340,13 @@ $research_groups = get_field('research_groups', 'option');
 
 
                     content = `
-                        <div class="swiper-slide swiper-slide${i}">
+                        <div class="swiper-slide swiper-slide${i} uzhsl-external-content">
                             <div class="uzhsl-slide uzhsl-slide-publication">
                                 <section class="uzhsl-section uzhsl-section-standard uzhsl-section-card">
                                     <div class="uzhsl-section-wrapper sm-block">
                                         <div class="uzhsl-column uzhsl-column-left sm-col sm-large-5 sm-medium-6">
                                             <div class="section__media section__image uzhsl-image" height: 241.052px;">
-                                                <img src="${params.imageUrl}" class="attachment-large size-large" alt="${params.altText}">        
+                                                <img src="${params.imageUrl || placeholderImageUrl}" class="attachment-large size-large" alt="${params.altText}">        
                                             </div>
                                         </div>
                                         <div class="uzhsl-column uzhsl-column-right sm-col sm-large-6 sm-medium-6 ">            

@@ -303,3 +303,27 @@ button {
 	box-shadow: $box-shadow-regular;
     margin-bottom: map_get( $spacing, "regular" );
 }
+
+/**
+*========================================
+*	
+*	UZHSL Group Site
+*	
+*========================================
+*/
+
+.uzhsl-external-content {
+    opacity: 0;
+    animation: appear .6s .3s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        max-height: 0px;
+    }
+    100% {
+        opacity: 1;
+        max-height: 600px;
+    }
+}
